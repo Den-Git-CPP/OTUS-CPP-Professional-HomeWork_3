@@ -1,9 +1,10 @@
+#include <iostream>
 #include <map>
 #include <functional>
-#include <iostream>
 
 #include "allocator.h"
 #include "fwlist.h"
+
 
 template <typename T, typename U>
 std::ostream& operator<<(std::ostream& os, const std::pair<T, U>& pair) {
@@ -34,7 +35,8 @@ void print_cont(const Container& cont) {
 		std::cout << elem << '\n';
 }
 
-int main() {
+
+int main(int argc, char **argv) {
 	std::map<int, int> std_map_std_alloc;
 	inizialz_map(std_map_std_alloc);
 	std::cout << "\nstd_map_std_alloc:\n";

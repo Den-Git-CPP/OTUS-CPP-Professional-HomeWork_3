@@ -17,6 +17,7 @@ jobs:
       - run: cmake --build .
       - run: cmake --build . --target package
       - run: ./Allocator_cli
+      - run: ./g_test_allocator
       
       - name: Create Release
         id: create_release
