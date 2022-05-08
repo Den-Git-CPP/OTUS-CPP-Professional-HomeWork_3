@@ -85,7 +85,7 @@ public:
 	std::size_t size() const {
 		return m_size;
 	}
-
+	
 private:
 	using NodeAllocator = typename Allocator::template rebind<Node>::other;
 	Node* m_first = nullptr;

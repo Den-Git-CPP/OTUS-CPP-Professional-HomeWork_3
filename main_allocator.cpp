@@ -27,7 +27,7 @@ template <typename Allocator>
 void inizialz_fwlist(ForwardList<int, Allocator>& list) {
 	auto last = list.begin();
 	for (int i = 0; i < 10; ++i)
-		last = list.insert_after(last, i);
+		last = list.insert_after(last,factorial(i));
 }
 template <typename Container>
 void print_cont(const Container& cont) {
