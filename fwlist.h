@@ -87,7 +87,7 @@ public:
 	}
 	
 private:
-	using NodeAllocator = typename Allocator::template rebind<Node>::other;
+	using NodeAllocator = typename std::allocator_traits<Allocator>:: template rebind_alloc<Node>;
 	Node* m_first = nullptr;
 	NodeAllocator m_allocator;
 	std::size_t m_size = 0;
