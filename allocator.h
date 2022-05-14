@@ -23,7 +23,7 @@ public:
 	using const_reference = const T&;
 
 	My_Allocator(){
-	mem_map.fill(false);
+	_mem_map.fill(false);
 	}
 
 	~My_Allocator() {
