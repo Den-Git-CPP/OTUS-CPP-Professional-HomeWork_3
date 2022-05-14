@@ -22,13 +22,7 @@ public:
 	using reference = T&;
 	using const_reference = const T&;
 
-	My_Allocator() {
-		_data = reinterpret_cast<T*>(std::malloc(size * sizeof(T)));
-		if (_data == nullptr) {
-			throw std::bad_alloc();
-		}
-		_mem_map.fill(false);
-	}
+	My_Allocator() =default;
 
 	~My_Allocator() {
 		std::free(_data);
@@ -47,6 +41,12 @@ public:
 				std::cout << __PRETTY_FUNCTION__ << "[n = " << n << "]" << std::endl;
 		#endif
 		*/
+		_data = reinterpret_cast<T*>(std::malloc(size * sizeof(T)));
+		if (_data == nullptr) {
+			throw std::bad_alloc();
+		}
+		_mem_map.fill(false);
+
 		if (size - _allocated_size < n) {
 			throw std::bad_alloc();
 		}
